@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
+<div class="topbar">
+  <h1>Quotes</h1>  <%= link_to "New quote", new_quote_path %>
+</div>
 
-<h1>Quotes</h1>
+<br>
+<br>
 
 <div id="quotes">
   <% @quotes.each do |quote| %>
-    <%= render quote %>
-    <p>
-      <%= link_to "Show this quote", quote %>
-    </p>
+    <div class="onequote">
+      <%= render quote %>
+      <p class="quotelinks">
+        <%= link_to "Show this quote", quote %>
+        <%= link_to "Delete", quote_path(id: quote.id), data: { turbo_method: :delete } %>
+        <%= link_to "Edit", edit_quote_path(id: quote.id) %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New quote", new_quote_path %>
