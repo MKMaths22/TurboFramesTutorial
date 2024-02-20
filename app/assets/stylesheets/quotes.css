@@ -11,7 +11,7 @@ h1 {
   padding: 0;
 }
 
-div.topbar {
+div.header {
   display: flex;
   justify-content: space-between;
   width: 250px;

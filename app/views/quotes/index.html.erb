@@ -1,8 +1,9 @@
 <p style="color: green"><%= notice %></p>
-<div class="topbar">
-  <h1>Quotes</h1>  <%= link_to "New quote", new_quote_path %>
-</div>
-
+<%= turbo_frame_tag "first_turbo_frame" do %>
+  <div class="header">
+    <h1>Quotes</h1>  <%= link_to "New quote", new_quote_path %>
+  </div>
+<% end %>
 <br>
 <br>
 
