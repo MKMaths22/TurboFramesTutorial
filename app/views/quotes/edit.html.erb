@@ -1,10 +1,16 @@
-<h1>Editing quote</h1>
+<%= link_to "Back to quote", quote_path(@quote) %>
 
-<%= render "form", quote: @quote %>
+<div class="header">
+  <h1>Edit quote</h1>
+</div>
+
+<%= turbo_frame_tag @quote do %>
+  <%= render "form", quote: @quote %>
+<% end %>
 
 <br>
 
 <div>
-  <%= link_to "Show this quote", @quote %> |
+  <%= link_to "Show this quote", @quote %>
   <%= link_to "Back to quotes", quotes_path %>
 </div>

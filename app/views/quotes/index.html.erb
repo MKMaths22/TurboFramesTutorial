@@ -1,22 +1,19 @@
 <p style="color: green"><%= notice %></p>
-<%= turbo_frame_tag "first_turbo_frame" do %>
-  <div class="header">
-    <h1>Quotes</h1>  <%= link_to "New quote", new_quote_path %>
-  </div>
-<% end %>
+
+<div class="header">
+  <h1>Quotes</h1>  <%= link_to "New quote", new_quote_path, data: { turbo_frame: "_top"} %>
+</div>
+
 <br>
 <br>
+
 
 <div id="quotes">
   <% @quotes.each do |quote| %>
     <div class="onequote">
       <%= render quote %>
-      <p class="quotelinks">
-        <%= link_to "Show this quote", quote %>
-        <%= link_to "Delete", quote_path(id: quote.id), data: { turbo_method: :delete } %>
-        <%= link_to "Edit", edit_quote_path(id: quote.id) %>
-      </p>
     </div>
   <% end %>
 </div>
+
 
