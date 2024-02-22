@@ -4,8 +4,9 @@
 
 <br>
 <br>
-
-<%= render "form", quote: @quote %>
+<%= turbo_frame_tag @quote do %>
+  <%= render "form", quote: @quote %>
+<% end %>
 
 
 <br>

@@ -2,7 +2,7 @@
   <div id="<%= dom_id quote %>">
     <%= link_to quote.name, quote_path(quote), data: { turbo_frame: "_top" } %>
     <p class="quotelinks">
-      <%= link_to "Delete", quote_path(quote), method: :delete, form: { data: { turbo_frame: "_top" }} %>
+      <%= link_to "Delete", quote_path(quote), data: { turbo_method: :delete } %>
       <%= link_to "Edit", edit_quote_path(quote) %>
     </p>
   </div>
